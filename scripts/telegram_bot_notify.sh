@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Send notifications to Telegram Bot
+# telegram_bot_notify.sh "your messege"
 
 MESSAGE_TEXT="$1"
 
