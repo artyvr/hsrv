@@ -1,0 +1,14 @@
+# Gotify a simple server for sending and receiving messages
+services:
+  gotify:
+    image: gotify/server
+    container_name: gotify
+    env_file:
+      - .env
+    ports:
+      - 8089:80
+    environment:
+      - GOTIFY_DEFAULTUSER_PASS=${ADMIN_DEFAULT_PASSWORD}
+      - TZ=${TIME_ZONE}
+    volumes:
+      - ${DATA_DEFAULT_PATH}/gotify:/app/data

@@ -1,0 +1,26 @@
+# Homepage homepage your services
+services:
+  homepage:
+    image: ghcr.io/gethomepage/homepage:latest
+    container_name: homepage
+    env_file:
+      - .env
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      HOMEPAGE_VAR_SERVER_IP_ADRESS: ${SERVER_IP_ADRESS}
+      HOMEPAGE_VAR_SERVER_SHORT_NAME: ${SERVER_SHORT_NAME}
+      HOMEPAGE_VAR_CITY_NAME: ${CITY_NAME}
+      HOMEPAGE_VAR_TIME_ZONE: ${TIME_ZONE}
+      HOMEPAGE_VAR_USER_DEFAULT_LOGIN: ${USER_DEFAULT_LOGIN}
+      HOMEPAGE_VAR_ADMIN_DEFAULT_PASSWORD: ${ADMIN_DEFAULT_PASSWORD}
+      HOMEPAGE_VAR_CITY_LATITUDE: ${CITY_LATITUDE}
+      HOMEPAGE_VAR_CITY_LONGITUDE: ${CITY_LONGITUDE}
+      HOMEPAGE_VAR_LANGUAGE: ${LANGUAGE}
+    ports:
+      - 3000:3000
+    volumes:
+      - ${DATA_DEFAULT_PATH}/homepage/config:/app/config
+      - ${DATA_DEFAULT_PATH}/homepage/media/images:/app/public/images
+      - ${DATA_DEFAULT_PATH}/homepage/media/icons:/app/public/icons
+    restart: unless-stopped

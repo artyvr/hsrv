@@ -1,0 +1,16 @@
+# Settings
+
+title: "{{HOMEPAGE_VAR_SERVER_SHORT_NAME}}"
+theme: "dark"
+color: "slate"
+background:
+    image: "/images/background.jpg"
+    blur: "sm"
+    saturate: 50
+    brightness: 50
+    opacity: 50
+headerStyle: "clean"
+language: "ru"
+showStats: true
+hideVersion: true
+statusStyle: "basic"

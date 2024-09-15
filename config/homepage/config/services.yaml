@@ -1,0 +1,134 @@
+
+- Media:
+    - Emby:
+        icon: emby.png
+        href: "http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8096"
+        description: Emby media server
+        showStats: true
+        siteMonitor: "http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8096/"
+        server: my-docker
+        container: embyserver
+        widget:
+          type: emby
+          url: "http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8096"
+          key: 80a9f334ad5540f98f3f1a6bd418369b
+
+    - qBittorrent:
+        icon: qbittorrent.png
+        href: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8080
+        description: Torrent client (port 8080)
+        showStats: true
+        siteMonitor: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8080/
+        widget:
+          type: qbittorrent
+          url: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8080
+          username: art
+          password: hotwind
+
+
+- Tools:
+    - FileBrowser:
+        icon: filebrowser.png
+        href: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8088/
+        description: FileBrowser (port 8088)
+        showStats: true
+        siteMonitor: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8088/
+
+    - Uptame Kuma:
+        icon: uptime-kuma.png
+        href: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:3003/dashboard/
+        description: Monitoring server (port 3003)
+        showStats: true
+        siteMonitor: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:3003/
+        server: my-docker
+        container: uptime-kuma
+
+    - Gotify:
+        icon: gotify.png
+        href: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8089
+        description: Notification server (port 8089)
+        showStats: true
+        siteMonitor: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8089/
+        server: my-docker
+        container: gotify
+        widget:
+          type: gotify
+          url: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8089
+          key: Cm7Vd0dYHmXxfiZ
+
+    - Portainer:
+        icon: portainer.png
+        href: https://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:9443
+        description: Portainer server (port 9443)
+        showStats: true
+        siteMonitor: https://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:9443/
+        server: my-docker
+        container: portainer
+        widget:
+          type: portainer
+          url: https://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:9443
+          env: 2
+          key: ptr_U9cfh54svuw2abkxOBP/FNJeLC7W4pUEBg3y9Nvb5KU=
+
+    - Pihole:
+       icon: pi-hole.png
+       href: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8081/admin/
+       description: DNS DHCP server adblocker (port 8081)
+       showStats: true
+       siteMonitor: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8081/admin/
+       server: my-docker
+       container: pihole
+       widget:
+         type: pihole
+         url: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8081
+         key: ed6566f857710670389075b313629dcdc09f4160b79bc4fbd77962eef862e5fe
+
+    - Dozzle:
+       icon: dozzle.png
+       href: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8082/
+       description: Docker logs viewer (port 8082)
+       showStats: true
+       siteMonitor: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8082/
+       server: my-docker
+       container: dozzle
+
+
+- Service:
+    - DockerProxy:
+        icon: docker.png
+        description: Docker proxy container (dockerproxy:2375)
+        showStats: true
+        server: my-docker
+        container: dockerproxy
+
+    - Diun:
+        icon: diun.png
+        description: Docker Image Update Notifier
+        showStats: true
+        server: my-docker
+        container: diun
+
+    - Samba:
+        icon: /icons/samba.png
+        description: SMB/CIFS sharing files
+        showStats: true
+        server: my-docker
+        container: samba
+
+    - Httpfs:
+        icon: nginx.png
+        href: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8084/
+        description: http sharing files (nginx) (port 8084)
+        showStats: true
+        siteMonitor: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8084/
+        server: my-docker
+        container: httpfs
+    
+    - Glances:
+        icon: glances.png
+        href: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:61208
+        description: Monitoring server (port 61208)
+        showStats: true
+        siteMonitor: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:61208/
+        server: my-docker
+        container: glances

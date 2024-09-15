@@ -1,0 +1,13 @@
+[Unit]
+Description=Portainer docker compose service
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/bash -c "docker compose -f /home/art/docker/docker-compose-portainer.yml up --detach"
+ExecStop=/bin/bash -c "docker compose -f /home/art/docker/docker-compose-portainer.yml stop"
+
+[Install]
+WantedBy=multi-user.target

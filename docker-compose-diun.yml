@@ -1,0 +1,32 @@
+services:
+  diun:
+    image: crazymax/diun:latest
+    container_name: diun
+    env_file:
+      - .env
+    command: serve
+    volumes:
+      - ${DATA_DEFAULT_PATH}/diun:/data
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      - TZ=${TIME_ZONE}
+      - DIUN_WATCH_WORKERS=20
+      - DIUN_WATCH_SCHEDULE=0 */6 * * *
+      - DIUN_WATCH_JITTER=30s
+      - DIUN_PROVIDERS_DOCKER=true
+      - DIUN_PROVIDERS_DOCKER_WATCHBYDEFAULT=true
+      ## Notify provaiders
+      # Gotify
+      - DIUN_NOTIF_GOTIFY_ENDPOINT=http://${SERVER_IP_ADRESS}:8089
+      - DIUN_NOTIF_GOTIFY_TOKEN=AvG61E0AB0SC05c
+      - DIUN_NOTIF_GOTIFY_PRIORITY=5
+      - DIUN_NOTIF_GOTIFY_TIMEOUT=10s
+      # Telegram
+      - DIUN_NOTIF_TELEGRAM_TOKEN=${TELEGRAM_BOT_TOKEN}
+      #- DIUN_NOTIF_TELEGRAM_TOKENFILE
+      - DIUN_NOTIF_TELEGRAM_CHATIDS=${TELEGRAM_BOT_CHAT_ID}
+      #- DIUN_NOTIF_TELEGRAM_CHATIDSFILE
+      #- DIUN_NOTIF_TELEGRAM_TEMPLATEBODY
+    labels:
+      - diun.enable=true
+    restart: always

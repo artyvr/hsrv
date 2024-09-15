@@ -1,0 +1,12 @@
+# Uptime Kuma monitoring
+services:
+  uptime-kuma:
+    image: louislam/uptime-kuma:latest
+    container_name: uptime-kuma
+    env_file:
+      - .env
+    volumes:
+      - ${DATA_DEFAULT_PATH}/uptime-kuma:/app/data
+    ports:
+      - 3003:3001
+    restart: always

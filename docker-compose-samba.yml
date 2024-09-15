@@ -1,0 +1,22 @@
+# Samba SMB/CIFS sharing
+services:
+  samba:
+    image: crazymax/samba
+    container_name: samba
+    hostname: samba
+    network_mode: host
+    env_file:
+      - .env
+    cap_add:
+      - CAP_NET_ADMIN
+      - CAP_NET_RAW
+    volumes:
+      - "${DATA_DEFAULT_PATH}/samba/data:/data"
+      - "${MEDIA_DEFAULT_PATH}/share:/samba/share"
+    environment:
+      - "TZ=${TIME_ZONE}"
+      - "SAMBA_LOG_LEVEL=0"
+      - "WSDD2_ENABLE=1"
+      - "WSDD2_HOSTNAME=share"
+      - "WSDD2_NETBIOS_NAME=share"
+    restart: always

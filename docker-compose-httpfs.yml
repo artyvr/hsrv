@@ -1,0 +1,16 @@
+# HTTPFS http file-server via http (nginx)
+services:
+  httpfs:
+    image: artyvr/httpfs:latest
+    container_name: httpfs
+    env_file:
+      - .env
+    volumes:
+      - ${MEDIA_DEFAULT_PATH}/share:/var/www/static
+      - ${MEDIA_DEFAULT_PATH}/hsrv_static/images:/var/www/images
+      - ${MEDIA_DEFAULT_PATH}/hsrv_static/icons:/var/www/icons
+      - ${MEDIA_DEFAULT_PATH}/hsrv_static/videos:/var/www/videos
+      - ${MEDIA_DEFAULT_PATH}/hsrv_static/audio:/var/www/audio
+    restart: unless-stopped
+    ports:
+      - 8084:8080

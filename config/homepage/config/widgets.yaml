@@ -1,0 +1,17 @@
+- resources:
+    cpu: true
+    memory: true
+
+- datetime:
+    text_size: xl
+    format:
+      dateStyle: short
+      timeStyle: short
+
+- openmeteo:
+    label: "{{HOMEPAGE_VAR_CITY_NAME}}"
+    latitude: "{{HOMEPAGE_VAR_CITY_LATITUDE}}"
+    longitude: "{{HOMEPAGE_VAR_CITY_LONGITUDE}}"
+    timezone: "{{HOMEPAGE_VAR_TIME_ZONE}}"
+    units: metric
+    cache: 10

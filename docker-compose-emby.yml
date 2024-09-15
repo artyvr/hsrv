@@ -1,0 +1,22 @@
+# Emby mediaserver
+services:
+  emby:
+    image: emby/embyserver
+    container_name: embyserver
+    network_mode: host
+    env_file:
+      - .env
+    environment:
+      - UID=${PUID}
+      - GID=100
+      - GIDLIST=100
+    volumes:
+      - ${DATA_DEFAULT_PATH}/emby:/config
+      - ${MEDIA_DEFAULT_PATH}/tvshows:/mnt/share1
+      - ${MEDIA_DEFAULT_PATH}/movies:/mnt/share2
+      - ${MEDIA_DEFAULT_PATH}/music:/mnt/music
+    ports:
+      - 8096:8096
+    devices:
+      - /dev/dri:/dev/dri
+    restart: on-failure

@@ -1,0 +1,17 @@
+# Filebrowser 
+services:
+  filebrowser:
+    image: filebrowser/filebrowser:latest
+    container_name: filebrowser
+    env_file:
+      - .env
+    ports:
+      - 8088:80
+    volumes:
+      - ${MEDIA_DEFAULT_PATH}:/srv
+      - ${DATA_DEFAULT_PATH}/filebrowser/filebrowser.db:/database.db
+      - ${DATA_DEFAULT_PATH}/filebrowser/filebrowser.json:/filebrowser.json
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+    restart: unless-stopped

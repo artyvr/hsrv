@@ -1,0 +1,16 @@
+# Portainer container management
+services:
+  portainer:
+    image: portainer/portainer-ce:latest
+    container_name: portainer
+    env_file:
+      - .env
+    environment:
+      - TZ=${TIME_ZONE}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ${DATA_DEFAULT_PATH}/portainer:/data
+    ports:
+      - 8000:8000
+      - 9443:9443
+    restart: always

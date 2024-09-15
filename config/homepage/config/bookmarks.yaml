@@ -1,0 +1,29 @@
+
+- Developer:
+    - Github:
+        - icon: github-light.png
+          href: https://github.com/artyvr
+    - My VPN:
+        - icon: /icons/vpn.png
+          href: http://85.193.93.214:58916/artyvpn/panel/inbounds
+
+    - TimeWeb:
+        - icon: /icons/timeweb.png
+          href: https://timeweb.cloud/my/projects/399769
+
+    - LinuxServer.io:
+        - icon: lsio.png
+          href: https://docs.linuxserver.io/
+
+    - Firebog:
+        - icon: firebog.png
+          href: https://firebog.net/
+
+- Entertainment:
+    - YouTube:
+        - icon: youtube.png
+          href: https://youtube.com/
+
+    - VK:
+        - icon: /icons/vkvideo.png
+          href: https://vk.com/video/
