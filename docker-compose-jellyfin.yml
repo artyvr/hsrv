@@ -12,16 +12,16 @@ services:
       - ${DATA_DEFAULT_PATH}/jellyfin/cache:/cache
       - type: bind
         source: ${MEDIA_DEFAULT_PATH}/tvshows
-        target: /media
+        target: /tvshows
       - type: bind
         source: ${MEDIA_DEFAULT_PATH}/movies
-        target: /media2
+        target: /movies
       - type: bind
         source: ${MEDIA_DEFAULT_PATH}/music
-        target: /media3
+        target: /music
     restart: 'unless-stopped'
     ports:
-      - 8097:8096
+      - 8096:8096
     #devices:
     #  - /dev/dri:/dev/dri
     # Optional - alternative address used for autodiscovery

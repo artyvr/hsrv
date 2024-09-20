@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-backup_path="/path/to/backup"
+backup_path="/home/data/backup"
 srv_backup_dir="sites"
 srv_data_dir="/opt/hsrv"
 exclude_tag=".socket"

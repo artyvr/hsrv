@@ -20,7 +20,5 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - ${DATA_DEFAULT_PATH}/homepage/config:/app/config
-      - ${DATA_DEFAULT_PATH}/homepage/media/images:/app/public/images
-      - ${DATA_DEFAULT_PATH}/homepage/media/icons:/app/public/icons
+      - ./config/homepage/config:/app/config
     restart: unless-stopped

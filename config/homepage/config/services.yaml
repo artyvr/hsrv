@@ -1,17 +1,17 @@
 
 - Media:
-    - Emby:
-        icon: emby.png
+    - Jellyfin:
+        icon: jellyfin.png
         href: "http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8096"
-        description: Emby media server
+        description: Просмотр тв-шоу, фильмов, музыки ...
         showStats: true
         siteMonitor: "http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8096/"
         server: my-docker
-        container: embyserver
+        container: jellyfin
         widget:
-          type: emby
+          type: jellyfin
           url: "http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8096"
-          key: 80a9f334ad5540f98f3f1a6bd418369b
+          key: 593023ac7da9462bbf55730880797b66
 
     - qBittorrent:
         icon: qbittorrent.png
@@ -25,6 +25,13 @@
           username: art
           password: hotwind
 
+    - Metube:
+        icon: metube.png
+        href: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8071
+        description: Скачивание видео с youtube.com (port 8071)
+        showStats: true
+        siteMonitor: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8071/
+
 
 - Tools:
     - FileBrowser:
@@ -33,6 +40,17 @@
         description: FileBrowser (port 8088)
         showStats: true
         siteMonitor: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8088/
+        server: my-docker
+        container: filebrowser
+
+    - IT-Tools:
+        icon: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8084/icons/it-tools.png
+        href: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8085/
+        description: IT-Tools (port 8085)
+        showStats: true
+        siteMonitor: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8085/
+        server: my-docker
+        container: it-tools
 
     - Uptame Kuma:
         icon: uptime-kuma.png
@@ -109,21 +127,21 @@
         container: diun
 
     - Samba:
-        icon: /icons/samba.png
-        description: SMB/CIFS sharing files
+        icon: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8084/icons/samba.png
+        description: SMB and CIFS sharing files
         showStats: true
         server: my-docker
         container: samba
 
     - Httpfs:
         icon: nginx.png
-        href: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8084/
-        description: http sharing files (nginx) (port 8084)
+        href: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}/
+        description: http sharing files (nginx) (port 80)
         showStats: true
-        siteMonitor: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8084/
+        siteMonitor: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}/
         server: my-docker
         container: httpfs
-    
+
     - Glances:
         icon: glances.png
         href: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:61208

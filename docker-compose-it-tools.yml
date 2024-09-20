@@ -1,0 +1,10 @@
+# it-tools Useful tools for developer 
+services:
+  it-tools:
+    image: corentinth/it-tools:latest
+    container_name: it-tools
+    env_file:
+      - .env
+    restart: unless-stopped
+    ports:
+      - 8085:80

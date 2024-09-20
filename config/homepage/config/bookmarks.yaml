@@ -1,14 +1,14 @@
 
 - Developer:
     - Github:
-        - icon: github-light.png
+        - icon: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}/icons/github-light.png
           href: https://github.com/artyvr
     - My VPN:
-        - icon: /icons/vpn.png
+        - icon: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}/icons/vpn.png
           href: http://85.193.93.214:58916/artyvpn/panel/inbounds
 
     - TimeWeb:
-        - icon: /icons/timeweb.png
+        - icon: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}/icons/timeweb.png
           href: https://timeweb.cloud/my/projects/399769
 
     - LinuxServer.io:
@@ -16,7 +16,7 @@
           href: https://docs.linuxserver.io/
 
     - Firebog:
-        - icon: firebog.png
+        - icon: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}/icons/firebog.png
           href: https://firebog.net/
 
 - Entertainment:
@@ -25,5 +25,5 @@
           href: https://youtube.com/
 
     - VK:
-        - icon: /icons/vkvideo.png
+        - icon: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}/icons/vkvideo.png
           href: https://vk.com/video/

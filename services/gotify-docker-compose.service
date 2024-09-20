@@ -7,7 +7,7 @@ Requires=docker.service
 Type=oneshot
 RemainAfterExit=yes
 ExecStart=/bin/bash -c "docker compose -f /opt/hsrv/docker-compose-gotify.yml up --detach"
-ExecStop=/bin/bash -c "docker compose -f /opt/hsrv/docker-compose-gotify.yml stop"
+ExecStop=/bin/bash -c "docker compose -f /opt/hsrv/docker/docker-compose-gotify.yml stop"
 
 [Install]
 WantedBy=multi-user.target
