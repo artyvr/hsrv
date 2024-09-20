@@ -22,8 +22,8 @@
         widget:
           type: qbittorrent
           url: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8080
-          username: art
-          password: hotwind
+          username: {{HOMEPAGE_VAR_USER_DEFAULT_LOGIN}}
+          password: {{HOMEPAGE_VAR_ADMIN_DEFAULT_PASSWORD}}
 
     - Metube:
         icon: metube.png
