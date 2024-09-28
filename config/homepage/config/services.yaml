@@ -34,6 +34,20 @@
 
 
 - Tools:
+    - Portainer:
+        icon: portainer.png
+        href: https://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:9443
+        description: Portainer server (port 9443)
+        showStats: true
+        siteMonitor: https://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:9443/
+        server: my-docker
+        container: portainer
+        widget:
+          type: portainer
+          url: https://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:9443
+          env: 2
+          key: ptr_U9cfh54svuw2abkxOBP/FNJeLC7W4pUEBg3y9Nvb5KU=
+
     - FileBrowser:
         icon: filebrowser.png
         href: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8088/
@@ -44,7 +58,7 @@
         container: filebrowser
 
     - IT-Tools:
-        icon: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8084/icons/it-tools.png
+        icon: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}/icons/it-tools.png
         href: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8085/
         description: IT-Tools (port 8085)
         showStats: true
@@ -73,20 +87,6 @@
           type: gotify
           url: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8089
           key: Cm7Vd0dYHmXxfiZ
-
-    - Portainer:
-        icon: portainer.png
-        href: https://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:9443
-        description: Portainer server (port 9443)
-        showStats: true
-        siteMonitor: https://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:9443/
-        server: my-docker
-        container: portainer
-        widget:
-          type: portainer
-          url: https://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:9443
-          env: 2
-          key: ptr_U9cfh54svuw2abkxOBP/FNJeLC7W4pUEBg3y9Nvb5KU=
 
     - Pihole:
        icon: pi-hole.png
@@ -127,7 +127,7 @@
         container: diun
 
     - Samba:
-        icon: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}:8084/icons/samba.png
+        icon: http://{{HOMEPAGE_VAR_SERVER_IP_ADRESS}}/icons/samba.png
         description: SMB and CIFS sharing files
         showStats: true
         server: my-docker

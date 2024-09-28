@@ -11,3 +11,4 @@ ExecStop=/bin/bash -c "docker compose -f /opt/hsrv/docker/docker-compose-metube.
 
 [Install]
 WantedBy=multi-user.target
+Alias=metube.service

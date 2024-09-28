@@ -11,3 +11,4 @@ ExecStop=/bin/bash -c "docker compose -f /opt/hsrv/docker-compose-samba.yml stop
 
 [Install]
 WantedBy=multi-user.target
+Alias=samba.service

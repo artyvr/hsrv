@@ -11,3 +11,4 @@ ExecStop=/bin/bash -c "docker compose -f /opt/hsrv/docker-compose-qbittorrent.ym
 
 [Install]
 WantedBy=multi-user.target
+Alias=qbittorrent.service

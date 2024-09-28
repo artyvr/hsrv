@@ -11,3 +11,4 @@ ExecStop=/bin/bash -c "docker compose -f /opt/hsrv/docker-compose-dozzle.yml sto
 
 [Install]
 WantedBy=multi-user.target
+Alias=dozzle.service
