@@ -1,7 +1,7 @@
 # Gotify a simple server for sending and receiving messages
 services:
   gotify:
-    image: gotify/server
+    image: gotify/server:latest
     container_name: gotify
     env_file:
       - .env
