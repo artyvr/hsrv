@@ -2,8 +2,8 @@
 
 systemctl stop diun-docker-compose.service
 
-docker stop homepage
-docker rm homepage
+docker stop diun
+docker rm diun
 docker pull crazymax/diun:latest
 
 systemctl start diun-docker-compose.service
